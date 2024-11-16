@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "微軟正黑體", sans-serif;
+}
+
+header {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    color: #333;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 0.7rem 2rem;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover > a {
+    background-color: #f1f1f1;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.content {
+    max-width: 800px;
+    margin: 1rem auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.content h2 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.content ul li {
+    margin-bottom: 0.5rem;
+    padding: 0;
+    transition: transform 0.2s ease;
+}
+
+.content ul li:hover {
+    transform: translateX(10px);
+}
+
+.content ul li a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    position: relative;
+    background-color: white;
+    transition: all 0.2s ease;
+}
+
+.content ul li:nth-child(1) a:hover {
+    color: #e74c3c;
+    border-color: #e74c3c;
+}
+
+.content ul li:nth-child(2) a:hover {
+    color: #2ecc71;
+    border-color: #2ecc71;
+}
+
+.content ul li:nth-child(3) a:hover {
+    color: #3498db;
+    border-color: #3498db;
+}
+
+.content ul li:nth-child(4) a:hover {
+    color: #f1c40f;
+    border-color: #f1c40f;
+}
+
+.content ul li:nth-child(5) a:hover {
+    color: #9b59b6;
+    border-color: #9b59b6;
+}
+
+.content ul li a::after {
+    content: "→";
+    position: absolute;
+    right: 15px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.content ul li:hover a::after {
+    opacity: 1;
+}
+
+.content ul li a:hover {
+    color: #3498db;
+    border-color: #3498db;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 a:hover {
+    color: #666;
+} 
