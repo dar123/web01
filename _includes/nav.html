@@ -1,7 +1,21 @@
 <nav class="site-nav">
-  <ul>
-    <li><a href="{{ site.baseurl }}/">首頁</a></li>
-    <li><a href="{{ site.baseurl }}/about/">關於</a></li>
-    <li><a href="{{ site.baseurl }}/posts/">文章</a></li>
+  <ul class="nav-menu">
+    <li><a href="{{ site.baseurl }}/" class="nav-link {% if page.url == '/' %}active{% endif %}">首頁</a></li>
+    <li class="dropdown">
+      <a href="{{ site.baseurl }}/about/" class="nav-link {% if page.url contains 'about' %}active{% endif %}">關於</a>
+      <ul class="dropdown-menu">
+        <li><a href="{{ site.baseurl }}/about/profile">個人簡介</a></li>
+        <li><a href="{{ site.baseurl }}/about/experience">經歷</a></li>
+        <li><a href="{{ site.baseurl }}/about/skills">技能</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="{{ site.baseurl }}/posts/" class="nav-link {% if page.url contains 'posts' %}active{% endif %}">文章</a>
+      <ul class="dropdown-menu">
+        <li><a href="{{ site.baseurl }}/posts/tech">技術文章</a></li>
+        <li><a href="{{ site.baseurl }}/posts/life">生活分享</a></li>
+        <li><a href="{{ site.baseurl }}/posts/thoughts">想法隨筆</a></li>
+      </ul>
+    </li>
   </ul>
 </nav> 
