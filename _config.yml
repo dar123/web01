@@ -1,8 +1,0 @@
-# 基本設置
-title: 思想者的分享網
-baseurl: "/dar123"
-url: "https://dar123.github.io"
-
-# 其他設置
-markdown: kramdown
-permalink: pretty 
