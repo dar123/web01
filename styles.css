@@ -150,3 +150,52 @@ h1 {
 header h1 a:hover {
     color: #666;
 } 
+img {
+    width: 80%; /* Adjust as needed */
+    height: auto;
+    display: block;
+    margin: auto;
+}
+/* 段落文字樣式 */
+p {
+  line-height: 1.6;          /* 行高 */
+  margin: 1rem 0;           /* 上下間距 */
+  color: #333;              /* 文字顏色 */
+  font-size: 1rem;          /* 文字大小 */
+  max-width: 800px;         /* 最大寬度 */
+  margin-left: auto;        /* 左右自動居中 */
+  margin-right: auto;
+  padding: 0 1rem;          /* 左右內邊距 */
+}
+
+/* 標題樣式 */
+h2, h3 {
+  color: #2c3e50;          /* 標題顏色 */
+  margin: 1.5rem 0 1rem;   /* 間距 */
+  padding-bottom: 0.5rem;  /* 底部內邊距 */
+  border-bottom: 2px solid #eee;  /* 底部邊框 */
+}
+
+h2 {
+  font-size: 1.8rem;       /* 大標題文字大小 */
+}
+
+h3 {
+  font-size: 1.4rem;       /* 小標題文字大小 */
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+  p {
+    font-size: 0.95rem;    /* 手機版稍微縮小文字 */
+    padding: 0 0.8rem;     /* 縮小內邊距 */
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+}
