@@ -5,16 +5,58 @@ body {
 }
 
 header {
-    background-color: #f8f9fa;
+    color: white;  
+    background-color: #555;  /* 深灰色背景 */
     padding: 1rem;
     text-align: center;
 }
 
+header h1 a {
+    color: white !important;  /* 使用 !important 確保顏色應用 */
+    text-decoration: none;
+}
+header h1 a:hover {
+    color: #B0BEC5!important;  /* 滑鼠懸停時變為柔和的灰藍色 */
+}
 h1 {
     margin: 0;
     color: #333;
+    font-weight: bold; /* 字體加粗 */
+    letter-spacing: 0.1rem; /* 增加字距 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* 增加文字陰影 */
 }
 
+h1 a {
+    color: inherit; /* 繼承父層的顏色 */
+    text-decoration: none; /* 去掉連結的底線 */
+    transition: color 0.2s ease; /* 滑過時的顏色變化 */
+}
+
+h1 a:hover {
+    color: #666; /* 滑過時顏色變深 */
+}
+
+p {
+    line-height: 1.8; /* 增加行距，讓段落更易閱讀 */
+    color: #444; /* 設置深灰色字體，保留清晰度 */
+    font-size: 1rem; /* 設定文字大小 */
+    max-width: 800px;         /* 最大寬度 */
+    text-indent: 2em; /* 首行縮排 */
+    word-spacing: 0.1rem; /* 增加字間距 */
+}
+
+img {
+    transition: transform 0.3s ease;
+    width: 80%; /* Adjust as needed */
+    height: auto;
+    display: block;
+    margin: auto;
+}
+}
+
+img:hover {
+    transform: rotate(5deg) scale(1.05); /* 輕微旋轉並放大 */
+}
 .menu {
     list-style-type: none;
     margin: 0;
@@ -69,12 +111,9 @@ h1 {
     max-width: 800px;
     margin: 1rem auto;
     padding: 1rem;
-    text-align: center;
 }
-
-.content h2 {
-    color: #333;
-    margin-bottom: 1rem;
+.content h1 {
+    text-indent: 4em; /* 縮排兩個中文字 */
 }
 
 .content ul {
@@ -83,7 +122,7 @@ h1 {
 }
 
 .content ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     padding: 0;
     transition: transform 0.2s ease;
 }
@@ -91,18 +130,39 @@ h1 {
 .content ul li:hover {
     transform: translateX(10px);
 }
-
 .content ul li a {
     color: #2c3e50;
     text-decoration: none;
     font-size: 1.1rem;
     display: block;
-    padding: 0.5rem 1rem;
-    border: 1px solid #ddd;
+    padding: 0.7rem 1rem;
+    border: 2px solid #ddd;
     position: relative;
     background-color: white;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease; /* 改變時間加長讓過渡更柔和 */
 }
+
+
+.content ul li a::after {
+    content: "→";
+    position: absolute;
+    right: 15px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+
+.content ul li:hover a::after {
+    opacity: 1;
+}
+
+.content ul li a:hover {
+    color: #3498db; /* 改變文字顏色 */
+    border-color: #3498db; /* 改變邊框顏色 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 添加陰影 */
+    transform: scale(1.05); /* 放大效果 */
+}
+
 
 .content ul li:nth-child(1) a:hover {
     color: #e74c3c;
@@ -129,73 +189,23 @@ h1 {
     border-color: #9b59b6;
 }
 
-.content ul li a::after {
-    content: "→";
-    position: absolute;
-    right: 15px;
-    opacity: 0;
-    transition: opacity 0.2s ease;
+.auto-wrap {
+    white-space: pre-wrap; /* 保留空格並且自動換行 */
+    word-wrap: break-word; /* 讓長字串換行 */
 }
 
-.content ul li:hover a::after {
-    opacity: 1;
+/* 添加動畫效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* 向下偏移 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* 回到初始位置 */
+    }
 }
-
-.content ul li a:hover {
-    color: #3498db;
-    border-color: #3498db;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-header h1 a:hover {
-    color: #666;
-} 
-img {
-    width: 80%; /* Adjust as needed */
-    height: auto;
-    display: block;
-    margin: auto;
-}
-/* 段落文字樣式 */
-p {
-  line-height: 1.6;          /* 行高 */
-  margin: 1rem 0;           /* 上下間距 */
-  color: #333;              /* 文字顏色 */
-  font-size: 1rem;          /* 文字大小 */
-  max-width: 800px;         /* 最大寬度 */
-  margin-left: auto;        /* 左右自動居中 */
-  margin-right: auto;
-  padding: 0 1rem;          /* 左右內邊距 */
-}
-
-/* 標題樣式 */
-h2, h3 {
-  color: #2c3e50;          /* 標題顏色 */
-  margin: 1.5rem 0 1rem;   /* 間距 */
-  padding-bottom: 0.5rem;  /* 底部內邊距 */
-  border-bottom: 2px solid #eee;  /* 底部邊框 */
-}
-
-h2 {
-  font-size: 1.8rem;       /* 大標題文字大小 */
-}
-
-h3 {
-  font-size: 1.4rem;       /* 小標題文字大小 */
-}
-
-/* 響應式調整 */
-@media (max-width: 768px) {
-  p {
-    font-size: 0.95rem;    /* 手機版稍微縮小文字 */
-    padding: 0 0.8rem;     /* 縮小內邊距 */
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-  }
-  
-  h3 {
-    font-size: 1.2rem;
-  }
+/* 對內容容器應用動畫 */
+.content {
+    animation: fadeIn 0.8s ease-out; /* 動畫時長與效果 */
 }
