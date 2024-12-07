@@ -122,9 +122,10 @@ img:hover {
 }
 
 .content ul li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
     padding: 0;
     transition: transform 0.2s ease;
+    text-align: center;
 }
 
 .content ul li:hover {
@@ -135,16 +136,19 @@ img:hover {
     text-decoration: none;
     font-size: 1.1rem;
     display: block;
-    padding: 0.7rem 1rem;
-    border: 2px solid #ddd;
+    padding: 0.5rem 0.5rem;
+    border-bottom: 1px dotted #ddd;
     position: relative;
     background-color: white;
     transition: all 0.3s ease; /* 改變時間加長讓過渡更柔和 */
+    background: #f8f9fa;
+    border-radius: 4px;
 }
 
 
 .content ul li a::after {
     content: "→";
+    
     position: absolute;
     right: 15px;
     opacity: 0;
